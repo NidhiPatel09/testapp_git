@@ -25,6 +25,6 @@ app.listen(PORT,()=> {
     console.log(`+++++************App is listening on ${PORT}************+++++`)
 })
 
-app.get('/home', (req, res) => {
+app.get('/', (req, res) => {
         res.render('home.ejs')
     })
