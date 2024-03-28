@@ -2,6 +2,12 @@ console.log("Welcome from the app")
 
 import express from 'express'
 
+import mongoose from "mongoose"
+
+import MongoStore from "connect-mongo"
+
+import session from "express-session"
+
 const app = express()
 
 app.use(express.static('public'))
@@ -10,7 +16,10 @@ app.use(express.static('public'))
 
 app.set('view-engine', 'ejs')
 
-const PORT = process.env.PORT || 8000
+const uri = process.env.MONGO_URI
+
+
+const PORT = process.env.PORT || 8080
 
 app.listen(PORT,()=> {
     console.log(`+++++************App is listening on ${PORT}************+++++`)
